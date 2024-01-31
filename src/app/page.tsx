@@ -62,7 +62,8 @@ export default async function Page() {
               action={async (formData) => {
                 'use server';
                 await db.transaction(async (tx) => {
-                  tx.update(drizzleTransactions)
+                  await tx
+                    .update(drizzleTransactions)
                     .set({ value: formData.get('value') as string })
                     .where(
                       eq(drizzleTransactions.id, formData.get('id') as string),
