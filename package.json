@@ -1,0 +1,37 @@
+{
+  "name": "drizzle",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:seed-data": "tsx src/db/scripts/index.ts",
+    "db:generate-migrations": "drizzle-kit generate:pg",
+    "db:migrate": "ts-node src/db/migrate",
+    "db:push": "drizzle-kit push:pg",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "0.29.3",
+    "next": "^14.0.3",
+    "postgres": "^3.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.20.13",
+    "eslint": "^8",
+    "eslint-config-next": "^14.0.3",
+    "postcss": "^8",
+    "prettier": "3.0.3",
+    "tailwindcss": "^3",
+    "tailwindcss-animate": "^1.0.7",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.6.2",
+    "typescript": "^5"
+  }
+}
