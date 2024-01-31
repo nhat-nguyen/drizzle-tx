@@ -17,7 +17,7 @@ export default async function Page() {
           await db.insert(drizzleTransactions).values({
             value: formData.get('value') as string,
           });
-          revalidatePath('/drizzle');
+          revalidatePath('/');
         }}
       >
         <input name="value"></input>
@@ -40,7 +40,7 @@ export default async function Page() {
                   .where(
                     eq(drizzleTransactions.id, formData.get('id') as string),
                   );
-                revalidatePath('/drizzle');
+                revalidatePath('/');
               }}
             >
               <input name="id" type="hidden" value={id}></input>
@@ -68,7 +68,7 @@ export default async function Page() {
                       eq(drizzleTransactions.id, formData.get('id') as string),
                     );
                 });
-                revalidatePath('/drizzle');
+                revalidatePath('/');
               }}
             >
               <input name="id" type="hidden" value={id}></input>
